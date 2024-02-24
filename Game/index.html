@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Игра Камень-Ножницы-Бумага</title>
+    <style>
+      html,
+      body {
+        background: black;
+        color: white;
+      }
+      button {
+        border-radius: 5px;
+        background: green;
+        color: white;
+        border: none;
+      }
+      button:focus {
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Игра Камень-Ножницы-Бумага</h1>
+      <button id="kamen">
+        <img id="kamenImg" src="./imgIcon/icons8-будь-мужиком,-блеать-48.png" />
+      </button>
+      <button id="nojnitsa">
+        <img src="./imgIcon/icons8-рука-ножницы-тип-кожи-2-48.png" />
+      </button>
+      <button id="bumaga">
+        <img
+          id="imgBumaga"
+          src="./imgIcon/icons8-вся-рука-48.png"
+          alt="imgSrcBumaga"
+        />
+      </button>
+      <div id="randomNumber"></div>
+      <div id="itog"></div>
+      <div id="resultDiv"></div>
+    </div>
+    <script src="./app.js" defer></script>
+  </body>
+</html>
