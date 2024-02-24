@@ -9,39 +9,95 @@
       body {
         background: black;
         color: white;
+        font-size: 20px;
       }
       button {
         border-radius: 5px;
         background: green;
         color: white;
         border: none;
+        margin: 10px;
+        transition: ease 0.5s;
+      }
+      button:hover {
+        background: blue;
       }
       button:focus {
         background: red;
+      }
+      .containerBodyTitle {
+        text-align: center;
+      }
+      .buttonContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+      .resultBody {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .result {
+        border-radius: 20px;
+        text-align: center;
+        margin: 30px;
+        padding: 20px;
+        font-weight: bold;
+      }
+      .buttonAlignItemsCenter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .randomNumber {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .footerText {
+        color: blueviolet;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <h1>Игра Камень-Ножницы-Бумага</h1>
-      <button id="kamen">
-        <img id="kamenImg" src="./imgIcon/icons8-будь-мужиком,-блеать-48.png" />
-      </button>
-      <button id="nojnitsa">
-        <img src="./imgIcon/icons8-рука-ножницы-тип-кожи-2-48.png" />
-      </button>
-      <button id="bumaga">
-        <img
-          id="imgBumaga"
-          src="./imgIcon/icons8-вся-рука-48.png"
-          alt="imgSrcBumaga"
-        />
-      </button>
-      <div id="randomNumber"></div>
-      <div id="itog"></div>
-      <div id="resultDiv"></div>
+      <div class="containerBody">
+        <h3 class="containerBodyTitle">Камень-Ножницы-Бумага</h3>
+        <div class="buttonContainer">
+          <button id="kamen">
+            <img
+              id="kamenImg"
+              src="./imgIcon/icons8-будь-мужиком,-блеать-48.png"
+            />
+          </button>
+
+          <button id="nojnitsa">
+            <img src="./imgIcon/icons8-рука-ножницы-тип-кожи-2-48.png" />
+          </button>
+
+          <button id="bumaga">
+            <img
+              id="imgBumaga"
+              src="./imgIcon/icons8-вся-рука-48.png"
+              alt="imgSrcBumaga"
+            />
+          </button>
+        </div>
+        <div class="resultBody">
+          <div id="randomNumber" class="randomNumber"></div>
+          <div id="itog" class="randomNumber"></div>
+        </div>
+        <div id="resultDiv" class="result"></div>
+      </div>
       <footer>
-        <p>Создатель сайта <b>Донийорбек</b></p>
+        <p class="footerText">
+          Создатель игры: <b style="color: white">Донийорбек</b>
+        </p>
+        <p class="footerText">
+          Тестировщик: <b style="color: white">Отабек</b>
+        </p>
       </footer>
     </div>
     <script src="./app.js" defer></script>

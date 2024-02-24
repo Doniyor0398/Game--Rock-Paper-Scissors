@@ -37,8 +37,10 @@ kamenBtn.onclick = function () {
     resultDomDiv = ResultDivUser.innerHTML = "Вы проиграли ;(";
     ResultDivUser.style.background = "red";
   }
-  ComputerBot.innerHTML = "Computer: " + result;
-  itogDiv.innerHTML = "Вы: " + imgSrcKamen;
+  let vs = "VS";
+
+  ComputerBot.innerHTML = `Computer:   ${result}  ${vs} `;
+  itogDiv.innerHTML = imgSrcKamen + "Вы: ";
   ResultDivUser.innerHTML = "Результат: " + resultDomDiv;
 };
 // КНОПКА НОЖНИЦЫ
@@ -63,9 +65,9 @@ nojnitsaBtn.onclick = function () {
     resultDomDiv = ResultDivUser.innerHTML = "Вы победили!!!";
     ResultDivUser.style.background = "green";
   }
-  ComputerBot.innerHTML = "Computer: " + result;
+  ComputerBot.innerHTML = "Computer: " + result + "VS";
   ResultDivUser.innerHTML = "Результат: " + resultDomDiv;
-  itogDiv.innerHTML = "Вы: " + imgSrcNoj;
+  itogDiv.innerHTML = imgSrcNoj + "Вы: ";
 };
 // БУМАГА
 bumagaBtn.onclick = function () {
@@ -89,7 +91,7 @@ bumagaBtn.onclick = function () {
     ResultDivUser.style.background = "#717151";
   }
 
-  itogDiv.innerHTML = "Вы: " + imgSrcBumaga;
-  ComputerBot.innerHTML = "Computer: " + randomNumber;
+  itogDiv.innerHTML = imgSrcBumaga + " Вы: ";
+  ComputerBot.innerHTML = " Computer: " + randomNumber + " VS ";
   ResultDivUser.innerHTML = "Результат: " + result;
 };
