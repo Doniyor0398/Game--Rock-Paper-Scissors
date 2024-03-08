@@ -29,7 +29,7 @@
   	display: flex;
   	flex-direction: column;
   	flex: 1 1 auto;
-  	font-size: 30px;
+  	font-size: 25px;
   }
 
   .buttonContainer {
@@ -100,7 +100,7 @@
   }
 
   .bodyCheckContainer button {
-  	font-size: 25px;
+  	font-size: 15px;
   }
 
   .youWinGame {
