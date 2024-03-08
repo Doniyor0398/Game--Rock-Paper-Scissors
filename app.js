@@ -1,99 +1,87 @@
-const kamenBtn = document.getElementById("kamen");
-const nojnitsaBtn = document.getElementById("nojnitsa");
-const bumagaBtn = document.getElementById("bumaga");
-const imgBumagaBtn = document.getElementById("imgBumaga");
-const kamenImgBtn = document.getElementById("kamenImg");
-
-const imgSrcBumaga = `<img src="./imgIcon/icons8-вся-рука-48.png" alt=imgSrcBumaga/>`;
-const imgSrcNoj = `<img src="./imgIcon/icons8-рука-ножницы-тип-кожи-2-48.png" alt=imgSrcBumaga/>`;
+// img выводим из dom
 const imgSrcKamen = `<img src="./imgIcon/icons8-будь-мужиком,-блеать-48.png" alt=imgSrcBumaga/>`;
+const imgSrcNoj = `<img src="./imgIcon/icons8-рука-ножницы-тип-кожи-2-48.png" alt=imgSrcBumaga/>`;
+const imgSrcBumaga = `<img src="./imgIcon/icons8-вся-рука-48.png" alt=imgSrcBumaga/>`;
 
-let bumagaValue = bumagaBtn.innerHTML;
-let KamenValue = kamenBtn.innerHTML;
-let NojnitsaValue = nojnitsaBtn.innerHTML;
+const user = document.getElementById("computerClickPlay");
+const computer = document.getElementById("userClickPlay");
+const resultGame = document.getElementById("resultGame");
+const chekBtn = document.getElementById("сheck");
+const tieBtn = document.getElementById("tie");
 
-let ComputerBot = document.getElementById("randomNumber");
-let itogDiv = document.getElementById("itog");
-let ResultDivUser = document.getElementById("resultDiv");
+const rockBtn = document.getElementById("Rock");
+const paperBtn = document.getElementById("Paper");
+const scissorsBtn = document.getElementById("Scissors");
+// Меняем атрибуты через стрелычные функции
+let rockClick = () => userClick(imgSrcKamen);
+rockBtn.onclick = rockClick;
 
-// КНОПКА КАМЕНЬ
-kamenBtn.onclick = function () {
+let paperClick = () => userClick(imgSrcNoj);
+paperBtn.onclick = paperClick;
+
+let clickScissors = () => userClick(imgSrcBumaga);
+scissorsBtn.onclick = clickScissors;
+let CheckGameComputerUser = {
+  win: 0,
+  lose: 0,
+  tie: 0,
+};
+// function
+function userClick(playUser) {
+  // playUser - это В HTML есть атрибут onClick=imgSrcKamen и т д.
+  const computerMove = computerClickMove(); //computerMove - это Переменная для фукнции userClick (не для функции computerClickMove)
+  let result = "";
+
+  if (playUser === imgSrcKamen) {
+    if (computerMove === imgSrcNoj) {
+      result = "Вы победили";
+    } else if (computerMove === imgSrcKamen) {
+      result = "Ничья";
+    } else if (computerMove === imgSrcBumaga) {
+      result = "Вы проиграли";
+    }
+  } else if (playUser === imgSrcNoj) {
+    if (computerMove === imgSrcBumaga) {
+      result = "Вы победили";
+    } else if (computerMove === imgSrcNoj) {
+      result = "Ничья";
+    } else if (computerMove === imgSrcKamen) {
+      result = "Вы проиграли";
+    }
+  } else if (playUser === imgSrcBumaga) {
+    if (computerMove === imgSrcKamen) {
+      result = "Вы победили";
+    } else if (computerMove === imgSrcBumaga) {
+      result = "Ничья";
+    } else if (computerMove === imgSrcNoj) {
+      result = "Вы проиграли";
+    }
+  }
+  if (result === "Вы победили") {
+    CheckGameComputerUser.win++;
+  } else if (result === "Вы проиграли") {
+    CheckGameComputerUser.lose++;
+  } else if (result === "Ничья") {
+    CheckGameComputerUser.tie++;
+  }
+
+  chekBtn.innerHTML = `Счёт (Вы) - ${CheckGameComputerUser.win} : (Ком) - ${CheckGameComputerUser.lose}`;
+  tieBtn.innerHTML = `Ничья ${CheckGameComputerUser.tie}`;
+  user.innerHTML = `Вы: ${playUser}`;
+  computer.innerHTML = `Копютер: ${computerMove}`;
+  resultGame.innerHTML = `Результат: ${result}`;
+
+  // console.log(`Вы: ${playUser} Computer: ${computerMove} Резльтат: ${result}`);
+}
+function computerClickMove() {
   let randomNumber = Math.random();
-  console.log(randomNumber);
-
+  let computerMove = "";
   if (randomNumber >= 0 && randomNumber < 1 / 3) {
-    result = ResultDivUser.innerHTML = imgSrcKamen;
+    computerMove = imgSrcKamen;
   } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
-    result = ResultDivUser.innerHTML = imgSrcNoj;
+    computerMove = imgSrcNoj;
   } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
-    result = ResultDivUser.innerHTML = imgSrcBumaga;
+    computerMove = imgSrcBumaga;
   }
-
-  if (result === imgSrcKamen) {
-    resultDomDiv = ResultDivUser.innerHTML = "Ничья";
-    ResultDivUser.style.background = "#717151";
-  } else if (result === imgSrcNoj) {
-    resultDomDiv = ResultDivUser.innerHTML = "Вы победили!!!";
-    ResultDivUser.style.background = "green";
-  } else if (result === imgSrcBumaga) {
-    resultDomDiv = ResultDivUser.innerHTML = "Вы проиграли ;(";
-    ResultDivUser.style.background = "red";
-  }
-  let vs = "VS";
-
-  ComputerBot.innerHTML = `Computer:   ${result}  ${vs} `;
-  itogDiv.innerHTML = imgSrcKamen + "Вы: ";
-  ResultDivUser.innerHTML = "Результат: " + resultDomDiv;
-};
-// КНОПКА НОЖНИЦЫ
-nojnitsaBtn.onclick = function () {
-  let randomNumber = Math.random();
-  if (randomNumber >= 0 && randomNumber < 1 / 3) {
-    result = ResultDivUser.innerHTML = imgSrcNoj;
-  } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
-    result = ResultDivUser.innerHTML = imgSrcKamen;
-  } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
-    result = ResultDivUser.innerHTML = imgSrcBumaga;
-  }
-
-  if (result === imgSrcNoj) {
-    console.log(result);
-    resultDomDiv = ResultDivUser.innerHTML = "Ничья";
-    ResultDivUser.style.background = "#717151";
-  } else if (result === imgSrcKamen) {
-    resultDomDiv = ResultDivUser.innerHTML = "Вы проиграли ;(";
-    ResultDivUser.style.background = "red";
-  } else if (result === imgSrcBumaga) {
-    resultDomDiv = ResultDivUser.innerHTML = "Вы победили!!!";
-    ResultDivUser.style.background = "green";
-  }
-  ComputerBot.innerHTML = "Computer: " + result + "VS";
-  ResultDivUser.innerHTML = "Результат: " + resultDomDiv;
-  itogDiv.innerHTML = imgSrcNoj + "Вы: ";
-};
-// БУМАГА
-bumagaBtn.onclick = function () {
-  let randomNumber = Math.random();
-  if (randomNumber >= 0 && randomNumber < 1 / 2) {
-    randomNumber = ComputerBots = imgSrcKamen;
-  } else if (randomNumber >= 1 / 2 && randomNumber < 2 / 3) {
-    randomNumber = ComputerBots = imgSrcNoj;
-  } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
-    randomNumber = ComputerBots = imgSrcBumaga;
-  }
-
-  if (randomNumber === imgSrcNoj) {
-    result = ResultDivUsers = "Вы проиграли";
-    ResultDivUser.style.background = "red";
-  } else if (randomNumber === imgSrcKamen) {
-    result = ResultDivUsers = "Вы победили!!!";
-    ResultDivUser.style.background = "green";
-  } else if (randomNumber === imgSrcBumaga) {
-    result = ResultDivUsers = "Ничья";
-    ResultDivUser.style.background = "#717151";
-  }
-
-  itogDiv.innerHTML = imgSrcBumaga + " Вы: ";
-  ComputerBot.innerHTML = " Computer: " + randomNumber + " VS ";
-  ResultDivUser.innerHTML = "Результат: " + result;
-};
+  return computerMove;
+}
