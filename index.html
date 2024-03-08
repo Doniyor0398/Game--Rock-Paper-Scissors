@@ -8,8 +8,12 @@
   </head>
   <body>
     <div class="wrapper">
-      <header class="header">
+      <div class="imgAdmin">
         <h3 class="containerBodyTitle">Камень-Ножницы-Бумага</h3>
+        <img src="./imgIcon/Doniyorbek.jpg" alt="" />
+      </div>
+      <header class="header">
+        <p class="subTitleHeader">Игра до шести балов</p>
       </header>
       <main class="main">
         <div class="containerBody">
@@ -34,9 +38,9 @@
             </button>
           </div>
           <div class="resultBody">
-            <div id="computerClickPlay" class="randomNumber">Компютер: ?</div>
-            <div id="vs" class="vs">VS</div>
             <div id="userClickPlay" class="randomNumber">Вы: ?</div>
+            <div id="vs" class="vs">VS</div>
+            <div id="computerClickPlay" class="randomNumber">Компютер: ?</div>
           </div>
           <div id="resultGame" class="randomNumber">Результат: ?</div>
           <div class="bodyCheckContainer">
@@ -45,17 +49,12 @@
               0 : 0
             </button>
             <button id="tie">Ничья:</button>
+            <button id="btnRestart">Начать заново</button>
           </div>
+          <div class="youWinGame" id="youWin"></div>
         </div>
       </main>
-      <footer class="footer">
-        <p class="footerText">
-          Создатель игры: <b style="color: white">Донийорбек</b>
-        </p>
-        <p class="footerText">
-          Тестировщик: <b style="color: white">Отабек</b>
-        </p>
-      </footer>
+      <footer class="footer"></footer>
     </div>
     <script src="./app.js" defer></script>
   </body>

@@ -29,6 +29,7 @@
   	display: flex;
   	flex-direction: column;
   	flex: 1 1 auto;
+  	font-size: 30px;
   }
 
   .buttonContainer {
@@ -62,7 +63,7 @@
   	display: flex;
   	justify-content: center;
   	align-items: center;
-  	font-size: 25px;
+  	font-size: 23px;
   }
 
   .footerText {
@@ -100,4 +101,26 @@
 
   .bodyCheckContainer button {
   	font-size: 25px;
+  }
+
+  .youWinGame {
+  	font-size: 10rem;
+  	text-align: center;
+  }
+
+  .subTitleHeader {
+  	text-align: center;
+  	font-weight: bold;
+  	font-size: 30px;
+  }
+
+  .imgAdmin {
+  	display: flex;
+  }
+
+  .imgAdmin img {
+  	max-width: 100%;
+  	width: 100px;
+  	height: 130px;
+  	border-radius: 80%;
   }
