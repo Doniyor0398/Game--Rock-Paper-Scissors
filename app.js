@@ -19,6 +19,8 @@ let ResultDivUser = document.getElementById("resultDiv");
 // КНОПКА КАМЕНЬ
 kamenBtn.onclick = function () {
   let randomNumber = Math.random();
+  console.log(randomNumber);
+
   if (randomNumber >= 0 && randomNumber < 1 / 3) {
     result = ResultDivUser.innerHTML = imgSrcKamen;
   } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
