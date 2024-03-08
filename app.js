@@ -31,6 +31,7 @@ function userClick(playUser) {
   // playUser - это В HTML есть атрибут onClick=imgSrcKamen и т д.
   const computerMove = computerClickMove(); //computerMove - это Переменная для фукнции userClick (не для функции computerClickMove)
   let result = "";
+  const vs = "VS";
 
   if (playUser === imgSrcKamen) {
     if (computerMove === imgSrcNoj) {
@@ -65,7 +66,7 @@ function userClick(playUser) {
     CheckGameComputerUser.tie++;
   }
 
-  chekBtn.innerHTML = `Счёт (Вы) - ${CheckGameComputerUser.win} : (Ком) - ${CheckGameComputerUser.lose}`;
+  chekBtn.innerHTML = `Счёт (Вы) - ${CheckGameComputerUser.win} DDD${vs} : (Ком) - ${CheckGameComputerUser.lose}`;
   tieBtn.innerHTML = `Ничья ${CheckGameComputerUser.tie}`;
   user.innerHTML = `Вы: ${playUser}`;
   computer.innerHTML = `Копютер: ${computerMove}`;
