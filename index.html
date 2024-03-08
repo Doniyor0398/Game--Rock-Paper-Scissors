@@ -4,79 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Игра Камень-Ножницы-Бумага</title>
-    <style>
-      html,
-      body {
-        background: black;
-        color: white;
-        font-size: 20px;
-        height: 100%;
-      }
-      button {
-        border-radius: 5px;
-        background: green;
-        color: white;
-        border: none;
-        margin: 10px;
-        transition: ease 0.5s;
-      }
-      button:hover {
-        background: blue;
-      }
-      button:focus {
-        background: red;
-      }
-      .containerBodyTitle {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        flex: 1 1 auto;
-      }
-      .buttonContainer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-      }
-      .resultBody {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .result {
-        border-radius: 20px;
-        text-align: center;
-        margin: 30px;
-        padding: 20px;
-        font-weight: bold;
-      }
-      .buttonAlignItemsCenter {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .randomNumber {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .footerText {
-        color: blueviolet;
-      }
-      .container {
-        min-height: 100%;
-        display: flex;
-        flex-direction: column;
-      }
-      .wrapper {
-        min-height: 100%;
-        display: flex;
-        flex-direction: column;
-      }
-      .main {
-        flex: 1 1 auto;
-      }
-    </style>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div class="wrapper">
@@ -106,13 +34,17 @@
             </button>
           </div>
           <div class="resultBody">
-            <div id="computerClickPlay" class="randomNumber"></div>
-            <div id="userClickPlay" class="randomNumber"></div>
+            <div id="computerClickPlay" class="randomNumber">Компютер: ?</div>
+            <div id="vs" class="vs">VS</div>
+            <div id="userClickPlay" class="randomNumber">Вы: ?</div>
           </div>
-          <div id="resultGame" class="randomNumber"></div>
+          <div id="resultGame" class="randomNumber">Результат: ?</div>
           <div class="bodyCheckContainer">
-            <button id="сheck">Счёт 0</button>
-            <button id="tie">Ничья</button>
+            <button id="сheck">
+              Счёт:<br />
+              0 : 0
+            </button>
+            <button id="tie">Ничья:</button>
           </div>
         </div>
       </main>

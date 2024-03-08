@@ -1,0 +1,103 @@
+  html,
+  body {
+  	background: black;
+  	color: white;
+  	font-size: 20px;
+  	height: 100%;
+  }
+
+  button {
+  	border-radius: 100px;
+  	padding: 15px;
+  	background: green;
+  	color: white;
+  	border: none;
+  	margin: 10px;
+  	transition: ease 0.5s;
+  }
+
+  button:hover {
+  	background: blue;
+  }
+
+  button:focus {
+  	background: red;
+  }
+
+  .containerBodyTitle {
+  	text-align: center;
+  	display: flex;
+  	flex-direction: column;
+  	flex: 1 1 auto;
+  }
+
+  .buttonContainer {
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  	width: 100%;
+  }
+
+  .resultBody {
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  }
+
+  .result {
+  	border-radius: 20px;
+  	text-align: center;
+  	margin: 30px;
+  	padding: 20px;
+  	font-weight: bold;
+  }
+
+  .buttonAlignItemsCenter {
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  }
+
+  .randomNumber {
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  	font-size: 25px;
+  }
+
+  .footerText {
+  	color: blueviolet;
+  }
+
+  .container {
+  	min-height: 100%;
+  	display: flex;
+  	flex-direction: column;
+  }
+
+  .wrapper {
+  	min-height: 100%;
+  	display: flex;
+  	flex-direction: column;
+  }
+
+  .main {
+  	flex: 1 1 auto;
+  }
+
+  .vs {
+  	padding: 20px;
+  	font-size: 60px;
+  	color: gold;
+  }
+
+  .bodyCheckContainer {
+  	margin: 50px 0 0 0;
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  }
+
+  .bodyCheckContainer button {
+  	font-size: 25px;
+  }

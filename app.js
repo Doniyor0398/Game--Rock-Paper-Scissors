@@ -8,6 +8,7 @@ const computer = document.getElementById("userClickPlay");
 const resultGame = document.getElementById("resultGame");
 const chekBtn = document.getElementById("сheck");
 const tieBtn = document.getElementById("tie");
+const titleVs = document.getElementById("vs");
 
 const rockBtn = document.getElementById("Rock");
 const paperBtn = document.getElementById("Paper");
@@ -31,7 +32,6 @@ function userClick(playUser) {
   // playUser - это В HTML есть атрибут onClick=imgSrcKamen и т д.
   const computerMove = computerClickMove(); //computerMove - это Переменная для фукнции userClick (не для функции computerClickMove)
   let result = "";
-  const vs = "VS";
 
   if (playUser === imgSrcKamen) {
     if (computerMove === imgSrcNoj) {
@@ -66,10 +66,11 @@ function userClick(playUser) {
     CheckGameComputerUser.tie++;
   }
 
-  chekBtn.innerHTML = `Счёт (Вы) - ${CheckGameComputerUser.win} DDD${vs} : (Ком) - ${CheckGameComputerUser.lose}`;
-  tieBtn.innerHTML = `Ничья ${CheckGameComputerUser.tie}`;
+  chekBtn.innerHTML = `Счёт:<br/> (Вы) ${CheckGameComputerUser.win} : ${CheckGameComputerUser.lose} (К)`;
+  tieBtn.innerHTML = `Ничья: ${CheckGameComputerUser.tie}`;
   user.innerHTML = `Вы: ${playUser}`;
-  computer.innerHTML = `Копютер: ${computerMove}`;
+  titleVs.innerHTML = " VS ";
+  computer.innerHTML = ` Компютер: ${computerMove}`;
   resultGame.innerHTML = `Результат: ${result}`;
 
   // console.log(`Вы: ${playUser} Computer: ${computerMove} Резльтат: ${result}`);
