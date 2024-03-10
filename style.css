@@ -21,7 +21,7 @@
   }
 
   button:focus {
-  	background: red;
+  	background: rgb(123, 11, 143);
   }
 
   .containerBodyTitle {
@@ -66,9 +66,7 @@
   	font-size: 23px;
   }
 
-  .footerText {
-  	color: blueviolet;
-  }
+
 
   .container {
   	min-height: 100%;
@@ -87,8 +85,8 @@
   }
 
   .vs {
-  	padding: 20px;
-  	font-size: 60px;
+  	padding: 10px;
+  	font-size: 40px;
   	color: gold;
   }
 
@@ -100,7 +98,7 @@
   }
 
   .bodyCheckContainer button {
-  	font-size: 15px;
+  	font-size: 9px;
   }
 
   .youWinGame {
@@ -120,7 +118,12 @@
 
   .imgAdmin img {
   	max-width: 100%;
-  	width: 100px;
-  	height: 130px;
+  	width: 20%;
+  	height: 10%;
   	border-radius: 80%;
+  }
+
+  .footerText {
+  	padding: 20px;
+  	color: rgb(108 84 198);
   }

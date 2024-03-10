@@ -117,16 +117,14 @@ restartBtn.addEventListener("click", function () {
   CheckGameComputerUser.lose = 0;
   CheckGameComputerUser.tie = 0;
 
-  // Сброс отображаемых результатов и состояний кнопок
   winYouGame.innerHTML = "";
   chekBtn.innerHTML = `Счёт:<br/> (Вы) ${CheckGameComputerUser.win} : ${CheckGameComputerUser.lose} (К)`;
   tieBtn.innerHTML = `Ничья: ${CheckGameComputerUser.tie}`;
-  user.innerHTML = "";
-  computer.innerHTML = "";
-  titleVs.innerHTML = "";
-  resultGame.innerHTML = "";
+  user.innerHTML = "Вы: ?";
+  computer.innerHTML = "Компютер: ?";
+  titleVs.innerHTML = " VS ";
+  resultGame.innerHTML = "Результат; ?";
 
-  // Возможно, вам также нужно снять атрибут "disabled" с кнопок выбора
   rockBtn.removeAttribute("disabled");
   paperBtn.removeAttribute("disabled");
   scissorsBtn.removeAttribute("disabled");
