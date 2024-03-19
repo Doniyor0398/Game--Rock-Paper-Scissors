@@ -18,38 +18,44 @@
       <main class="main">
         <div class="containerBody">
           <div class="buttonContainer">
-            <button id="Rock">
-              <img
-                id="kamenImg"
-                src="./imgIcon/icons8-будь-мужиком,-блеать-48.png"
-              />
-            </button>
-
-            <button id="Paper">
-              <img src="./imgIcon/icons8-рука-ножницы-тип-кожи-2-48.png" />
-            </button>
-
-            <button id="Scissors">
-              <img
-                id="imgBumaga"
-                src="./imgIcon/icons8-вся-рука-48.png"
-                alt="imgSrcBumaga"
-              />
-            </button>
+            <div class="bodyBtnHeader">
+              <button id="Rock" class="buttonGameSub">
+                <img
+                  id="kamenImg"
+                  src="./imgIcon/icons8-будь-мужиком,-блеать-48.png"
+                />
+              </button>
+            </div>
+            <div class="bodyBtnHeader">
+              <button id="Paper" class="buttonGameSub">
+                <img src="./imgIcon/icons8-рука-ножницы-тип-кожи-2-48.png" />
+              </button>
+            </div>
+            <div class="bodyBtnHeader">
+              <button id="Scissors" class="buttonGameSub">
+                <img
+                  id="imgBumaga"
+                  src="./imgIcon/icons8-вся-рука-48.png"
+                  alt="imgSrcBumaga"
+                />
+              </button>
+            </div>
           </div>
           <div class="resultBody">
-            <div id="userClickPlay" class="randomNumber">Вы: ?</div>
+            <div id="userClickPlay" class="randomNumber"></div>
             <div id="vs" class="vs">VS</div>
-            <div id="computerClickPlay" class="randomNumber">Компютер: ?</div>
+            <div id="computerClickPlay" class="randomNumber"></div>
           </div>
-          <div id="resultGame" class="randomNumber">Результат: ?</div>
+          <div id="resultGame" class="randomNumberBottom"></div>
           <div class="bodyCheckContainer">
-            <button id="сheck">
-              Счёт:<br />
-              0 : 0
-            </button>
-            <button id="tie">Ничья:</button>
-            <button id="btnRestart">Начать заново</button>
+            <button id="сheck" class="buttonSubScore"></button>
+            <button id="tie" class="buttonSubScore"></button>
+            <div class="bodyBtnRestartGame">
+              <button id="btnRestart" class="btnRestartGame">
+                Начать<br />
+                заново
+              </button>
+            </div>
           </div>
           <div class="youWinGame" id="youWin"></div>
         </div>

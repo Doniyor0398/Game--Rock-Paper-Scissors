@@ -25,17 +25,24 @@ paperBtn.onclick = paperClick;
 let clickScissors = () => userClick(imgSrcBumaga);
 scissorsBtn.onclick = clickScissors;
 
-let CheckGameComputerUser = {
+// ! LOACALSTORAGE--------------------------------------------------------GET.ITEM
+let CheckGameComputerUser = JSON.parse(localStorage.getItem("gameCheck")) || {
   win: 0,
-  lose: 0,
   tie: 0,
+  lose: 0,
 };
+
+chekBtn.innerHTML = `Счёт:<br/> (Вы) ${CheckGameComputerUser.win} : ${CheckGameComputerUser.lose} (К)`;
+tieBtn.innerHTML = `Ничья: ${CheckGameComputerUser.tie}`;
+console.log(CheckGameComputerUser);
+console.log(scoreFunction());
+scoreFunction();
+
 // function
 function userClick(playUser) {
   // playUser - это В HTML есть атрибут onClick=imgSrcKamen и т д.
   const computerMove = computerClickMove(); //computerMove - это Переменная для фукнции userClick (не для функции computerClickMove)
   let result = "";
-  let resultYouWin = "";
 
   if (playUser === imgSrcKamen) {
     if (computerMove === imgSrcNoj) {
@@ -69,6 +76,34 @@ function userClick(playUser) {
   } else if (result === "Ничья") {
     CheckGameComputerUser.tie++;
   }
+  // ! LOACALSTORAGE--------------------------------------------------------SET.ITEM
+  localStorage.setItem("gameCheck", JSON.stringify(CheckGameComputerUser));
+  scoreFunction();
+
+  winYouGame.innerHTML = `${scoreFunction()}`;
+  chekBtn.innerHTML = `Счёт:<br/> (Вы) ${CheckGameComputerUser.win} : ${CheckGameComputerUser.lose} (К)`;
+  tieBtn.innerHTML = `Ничья: ${CheckGameComputerUser.tie}`;
+  user.innerHTML = `Вы: ${playUser}`;
+  computer.innerHTML = ` Компютер: ${computerMove}`;
+  titleVs.innerHTML = " VS ";
+  resultGame.innerHTML = `Результат: 
+  ${result}`;
+}
+
+function computerClickMove() {
+  let randomNumber = Math.random();
+  let computerMove = "";
+  if (randomNumber >= 0 && randomNumber < 1 / 3) {
+    computerMove = imgSrcKamen;
+  } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+    computerMove = imgSrcNoj;
+  } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
+    computerMove = imgSrcBumaga;
+  }
+  return computerMove;
+}
+function scoreFunction() {
+  let resultYouWin = "";
   if (CheckGameComputerUser.win === 6) {
     resultYouWin = "🎉";
     rockBtn.setAttribute("disabled", " ");
@@ -85,37 +120,14 @@ function userClick(playUser) {
     paperBtn.setAttribute("disabled", " ");
     scissorsBtn.setAttribute("disabled", " ");
   }
-  // let paperClick = () => userClick(imgSrcNoj);
-  // paperBtn.onclick = paperClick;
-
-  winYouGame.innerHTML = `${resultYouWin}`;
-  chekBtn.innerHTML = `Счёт:<br/> (Вы) ${CheckGameComputerUser.win} : ${CheckGameComputerUser.lose} (К)`;
-  tieBtn.innerHTML = `Ничья: ${CheckGameComputerUser.tie}`;
-  user.innerHTML = `Вы: ${playUser}`;
-  computer.innerHTML = ` Компютер: ${computerMove}`;
-  titleVs.innerHTML = " VS ";
-  resultGame.innerHTML = `Результат: 
-  ${result}`;
-
-  // console.log(`Вы: ${playUser} Computer: ${computerMove} Резльтат: ${result}`);
+  return resultYouWin;
 }
-
-function computerClickMove() {
-  let randomNumber = Math.random();
-  let computerMove = "";
-  if (randomNumber >= 0 && randomNumber < 1 / 3) {
-    computerMove = imgSrcKamen;
-  } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
-    computerMove = imgSrcNoj;
-  } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
-    computerMove = imgSrcBumaga;
-  }
-  return computerMove;
-}
+// при клике на restartBtn обнуляется счёт
 restartBtn.addEventListener("click", function () {
   CheckGameComputerUser.win = 0;
   CheckGameComputerUser.lose = 0;
   CheckGameComputerUser.tie = 0;
+  localStorage.removeItem("gameCheck");
 
   winYouGame.innerHTML = "";
   chekBtn.innerHTML = `Счёт:<br/> (Вы) ${CheckGameComputerUser.win} : ${CheckGameComputerUser.lose} (К)`;
